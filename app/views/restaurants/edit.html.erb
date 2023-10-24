@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row ">
+    <div class="col">
+      <h1>Editing restaurant</h1>
+
+        <%= render "form", restaurant: @restaurant %>
+
+        <br>
+
+        <div>
+          <%= link_to "Show ", @restaurant, class: "btn btn-link" %> |
+          <%= link_to "Back ", restaurants_path, class: "btn btn-link" %>
+        </div>
+    </div>
+  </div>
+</div>
+
+

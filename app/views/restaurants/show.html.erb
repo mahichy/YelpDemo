@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @restaurant %>
+
+
+
+<div>
+  <%= link_to "Edit ", edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
+  <%= link_to "Back ", restaurants_path, class: "btn btn-link" %>
+</div>
