@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
+  <div class="row ">
     <div class="col-6">
-      <%= form_with(model: restaurant) do |form| %>
+      <%= form_with(model: restaurant, :html=> { multipart: :true }) do |form| %>
         <% if restaurant.errors.any? %>
           <div style="color: red">
             <h2><%= pluralize(restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
@@ -33,6 +33,10 @@
           <%= form.label :website, style: "display: block", class: "form-label" %>
           <%= form.text_field :website, class: "form-control" %>
         </div>
+        <div class="mb-3">
+          <%= form.label :image, style: "display: block", class: "form-label" %>
+          <%= form.file_field :image, class: "form-control" %>
+        </div>
 
         <div>
           <%= form.submit class: "btn btn-primary" %>
@@ -41,7 +45,7 @@
     
     </div>
 
-    
+
     <div class="col-6">
     </div>
   </div>
