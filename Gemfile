@@ -25,6 +25,7 @@ gem "bootstrap"
 gem "sassc-rails"
 gem 'carrierwave', '~> 3.0'
 gem "mini_magick"
+gem "devise"
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
