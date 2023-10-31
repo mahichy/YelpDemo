@@ -26,6 +26,7 @@ gem "sassc-rails"
 gem 'carrierwave', '~> 3.0'
 gem "mini_magick"
 gem "devise"
+gem 'hirb', '~> 0.7.3'
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
