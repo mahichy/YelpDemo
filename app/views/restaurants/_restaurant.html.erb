@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row ">
-    <div class="col ">
-      <div id="<%= dom_id restaurant %>">
+    <div class="col-md-3">
+        <div id="<%= dom_id restaurant %>">
   
           <%= image_tag @restaurant.image_url%>
           
-          <p>
+          <h4>
             <strong>Name:</strong>
-            <%= restaurant.name %>
-          </p>
+            <%= restaurant.name.upcase %>
+          </h4>
 
           <p>
             <strong>Address:</strong>
@@ -22,11 +22,24 @@
 
           <p>
             <strong>Website:</strong>
-            <%= restaurant.website %>
+            <%= link_to restaurant.website, restaurant.website %>
           </p>
+
+          
           
 
         </div>
+    </div>
+
+    <div class="col-md-9 ">
+      <% if @reviews.blank? %>
+        <h3>No Review yet. Be the first to write one!.</h3>
+      <% else %>
+          <% @reviews.each do |review|%>
+            <p><%= review.rating%></p>
+            <p><%= review.comment%></p>
+          <% end %>
+      <% end %>
     
     </div>
   </div>
