@@ -9,7 +9,8 @@
             <strong>Name:</strong>
             <%= restaurant.name.upcase %>
           </h4>
-
+            <p><%= @avg_rating%></p>
+            <p><%="#{@restaurant.name.length} reviews"%></p>
           <p>
             <strong>Address:</strong>
             <%= restaurant.address %>
@@ -35,12 +36,30 @@
       <% if @reviews.blank? %>
         <h3>No Review yet. Be the first to write one!.</h3>
       <% else %>
-          <% @reviews.each do |review|%>
-            <p><%= review.rating%></p>
-            <p><%= review.comment%></p>
-          <% end %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-md-3"></th>
+              <th class="col-md-9"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @reviews.each do |review|%>
+              <tr>
+                <td>
+                  <h4><%= "#{review.user.first_name.capitalize} "  "#{review.user.last_name.capitalize[0]}" %></h4>
+                  <p><%= review.created_at.strftime("%-m/%-d/%y") %></p>
+                </td>
+                <td>
+                  <p><%= review.rating%></p>
+                  <p><%= review.comment%></p>           
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       <% end %>
-    
     </div>
   </div>
 </div>
